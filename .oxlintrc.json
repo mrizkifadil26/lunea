@@ -1,0 +1,8 @@
+{
+  "plugins": ["react", "typescript"],
+  "categories": {
+    "correctness": "warn",
+    "suspicious": "warn",
+    "perf": "warn"
+  }
+}

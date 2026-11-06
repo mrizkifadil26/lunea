@@ -1,0 +1,41 @@
+.form {
+  width: min(100%, var(--form-width));
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h1 {
+  color: var(--color-gray-950);
+
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.form-header p {
+  max-width: 400px;
+  margin-top: 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-header strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 24px;
+}

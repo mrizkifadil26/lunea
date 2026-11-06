@@ -1,5 +1,5 @@
 {
-  "name": "saas-frontend",
+  "name": "lunea",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -9,9 +9,10 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "oxlint": "^1.90.0",
     "prettier": "3.9.6",
     "turbo": "^2.11.10",
-    "typescript": "7.0.2"
+    "typescript": "7.1.0-dev.20261103.1"
   },
   "packageManager": "pnpm@11.25.0",
   "engines": {
