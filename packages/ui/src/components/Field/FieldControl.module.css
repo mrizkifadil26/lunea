@@ -1,0 +1,63 @@
+/* .control {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  inline-size: 100%;
+  min-inline-size: 0;
+
+  &[data-has-start-adornment] > input {
+    padding-inline-start: 2.5rem;
+  }
+
+  &[data-has-end-adornment] > input {
+    padding-inline-end: 3rem;
+  }
+} */
+
+.control {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 2.75rem;
+
+  border: 1px solid var(--field-border, #d1d5db);
+  border-radius: 0.5rem;
+
+  background: var(--field-background, #ffffff);
+
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.control:hover {
+  border-color: var(--field-border-hover, #9ca3af);
+}
+
+.control:focus-within {
+  border-color: var(--field-border-focus, #6366f1);
+
+  box-shadow: 0 0 0 3px
+    var(--field-focus-ring, rgb(99 102 241 / 15%));
+}
+
+.control:has(input:disabled) {
+  cursor: not-allowed;
+
+  background: var(--field-background-disabled, #f3f4f6);
+}
+
+.control:has(input[aria-invalid='true']) {
+  border-color: var(--field-border-error, #dc2626);
+}
+
+.control:has(input[aria-invalid='true']):focus-within {
+  box-shadow: 0 0 0 3px
+    var(--field-focus-ring-error, rgb(220 38 38 / 15%));
+}

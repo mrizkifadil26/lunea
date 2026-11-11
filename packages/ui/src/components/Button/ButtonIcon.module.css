@@ -1,0 +1,72 @@
+.button {
+  --button-icon-color: var(--color-gray-300, #737373);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+
+  background: transparent;
+
+  color: var(--button-icon-color);
+  font: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+
+  &:hover:not(:disabled) {
+    --button-icon-color: var(--color-gray-400, #404040);
+  }
+
+  &:focus-visible {
+    --button-icon-color: var(--color-gray-400, #404040);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &[data-size='sm'] {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &[data-size='md'] {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &[data-size='lg'] {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.button[data-size='sm'] .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.button[data-size='lg'] .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

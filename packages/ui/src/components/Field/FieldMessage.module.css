@@ -1,0 +1,26 @@
+.message {
+  --field-message-color: var(--color-gray-600);
+
+  display: block;
+  margin-block-start: -0.125rem;
+
+  color: var(--field-message-color);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+
+  &[data-intent='error'] {
+    --field-message-color: var(--color-error-600);
+  }
+
+  &[data-intent='warning'] {
+    --field-message-color: var(--color-warning-600);
+  }
+
+  &[data-intent='success'] {
+    --field-message-color: var(--color-success-600);
+  }
+
+  &[data-intent='info'] {
+    --field-message-color: var(--color-info-600);
+  }
+}

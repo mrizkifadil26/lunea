@@ -1,0 +1,356 @@
+.register {
+  min-height: 100vh;
+  padding: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgb(99 102 241 / 0.05), transparent 32%),
+    var(--color-background);
+}
+
+.register-shell {
+  width: min(1100px, 100%);
+  min-height: 680px;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  overflow: hidden;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+
+  box-shadow: var(--shadow-lg);
+}
+
+/* ================================================================
+   Form panel
+   ================================================================ */
+
+.register-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 64px 72px;
+
+  background: var(--color-surface);
+}
+
+.register-form-container {
+  width: min(100%, var(--form-width));
+}
+
+/* ================================================================
+   Form
+   ================================================================ */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-heading {
+  margin-bottom: 30px;
+}
+
+.form-heading h1 {
+  color: var(--color-gray-950);
+
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.form-heading p {
+  max-width: 400px;
+  margin-top: 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-heading strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ================================================================
+   Fields
+   ================================================================ */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.field label {
+  color: var(--color-gray-800);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper > svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+
+  color: var(--color-gray-400);
+
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  padding-left: 43px;
+  padding-right: 43px;
+}
+
+.input-wrapper .input-action {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: var(--color-gray-400);
+  background: transparent;
+
+  border: 0;
+
+  transform: translateY(-50%);
+}
+
+.input-wrapper .input-action:hover {
+  color: var(--color-gray-700);
+}
+
+.code-input {
+  height: 58px !important;
+
+  text-align: center;
+
+  color: var(--color-gray-900) !important;
+
+  font-size: 24px !important;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+}
+
+/* ================================================================
+   Error
+   ================================================================ */
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 18px;
+  padding: 11px 13px;
+
+  color: var(--color-danger-600);
+  background: var(--color-danger-50);
+
+  border: 1px solid rgb(239 68 68 / 0.16);
+  border-radius: var(--radius-md);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.error-icon {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  background: var(--color-danger-500);
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ================================================================
+   Buttons
+   ================================================================ */
+
+.register-form .button {
+  width: 100%;
+}
+
+.button {
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border-radius: var(--radius-md);
+
+  font-size: 13px;
+}
+
+.button-primary {
+  color: white;
+  background: var(--color-gray-900);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--color-gray-800);
+  box-shadow: var(--shadow-md);
+}
+
+.button-secondary {
+  margin-top: 9px;
+
+  color: var(--color-gray-700);
+  background: white;
+
+  border: 1px solid var(--color-border-strong);
+}
+
+.button-secondary:hover {
+  background: var(--color-gray-50);
+}
+
+/* ================================================================
+   Verification
+   ================================================================ */
+
+.verification-help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin: 2px 0 22px;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+.text-button {
+  padding: 0;
+
+  color: var(--color-primary);
+
+  background: transparent;
+  border: 0;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+/* ================================================================
+   Footer
+   ================================================================ */
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 28px;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+.form-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================================================================
+   Responsive
+   ================================================================ */
+
+@media (max-width: 900px) {
+  .register {
+    padding: 20px;
+  }
+
+  .register-shell {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .register-form-panel {
+    padding: 48px 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .register {
+    min-height: 100vh;
+    padding: 0;
+
+    background: var(--color-surface);
+  }
+
+  .register-shell {
+    width: 100%;
+    min-height: 100vh;
+
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .register-form-panel {
+    align-items: flex-start;
+
+    padding: 36px 24px 48px;
+  }
+
+  .form-heading h1 {
+    font-size: 25px;
+  }
+
+  .password-requirements {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,44 @@
+.form {
+  --form-width: 28rem;
+
+  width: min(100%, var(--form-width));
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  margin-block-end: 1.875rem;
+
+  & h1 {
+    color: var(--color-gray-950);
+
+    font-size: 1.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+  }
+
+  & p {
+    max-width: 25rem;
+    margin-block-start: 0.625rem;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  & strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  margin-block-start: 1.5rem;
+}

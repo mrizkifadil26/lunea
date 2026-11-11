@@ -1,0 +1,35 @@
+.adornment {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  color: var(--field-adornment-color, #6b7280);
+
+  pointer-events: none;
+
+  & > svg {
+    inline-size: 1rem;
+    block-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  &[data-placement='start'] {
+    inset-inline-start: 0.75rem;
+  }
+
+  &[data-placement='end'] {
+    inset-inline-end: 0.5rem;
+  }
+
+  &[data-interactive='true'] {
+    pointer-events: auto;
+
+    color: var(--field-adornment-action, #9ca3af);
+  }
+}

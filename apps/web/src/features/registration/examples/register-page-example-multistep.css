@@ -1,0 +1,198 @@
+/* ==========================================
+   Registration Progress
+   ========================================== */
+
+.registration-progress {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 48px;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.progress-number {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  font-size: 11px;
+}
+
+.progress-step.is-complete {
+  color: var(--brand-indigo);
+}
+
+.progress-step.is-complete .progress-number {
+  border-color: var(--brand-indigo);
+
+  color: #ffffff;
+
+  background: var(--brand-indigo);
+}
+
+.progress-step.is-active {
+  color: var(--color-text);
+}
+
+.progress-step.is-active .progress-number {
+  border-color: var(--brand-indigo);
+
+  color: var(--brand-indigo);
+
+  background: rgba(66, 133, 212, 0.08);
+}
+
+.progress-line {
+  width: 48px;
+  height: 1px;
+
+  margin: 0 10px;
+
+  background: var(--color-border);
+}
+
+.progress-line.is-complete {
+  background: var(--brand-indigo);
+}
+
+/* ==========================================
+   OTP
+   ========================================== */
+
+.otp-field {
+  margin-bottom: 20px;
+}
+
+.otp-field > label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.otp-inputs {
+  display: flex;
+
+  gap: 8px;
+}
+
+.otp-inputs input {
+  width: 48px;
+  height: 54px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  color: var(--color-text);
+
+  background: #ffffff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-align: center;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.otp-inputs input:hover {
+  border-color: var(--color-border-hover);
+}
+
+.otp-inputs input:focus {
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 3px rgba(66, 133, 212, 0.12);
+}
+
+/* ==========================================
+   OTP Help
+   ========================================== */
+
+.otp-help {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 24px;
+
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+}
+
+.text-button {
+  padding: 0;
+
+  border: 0;
+
+  color: var(--brand-indigo);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   Back
+   ========================================== */
+
+.back-button {
+  width: 100%;
+
+  margin-top: 18px;
+  padding: 0;
+
+  border: 0;
+
+  color: var(--color-text-muted);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.back-button:hover {
+  color: var(--color-text);
+}

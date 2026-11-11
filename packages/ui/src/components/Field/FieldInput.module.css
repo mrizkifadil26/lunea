@@ -1,0 +1,37 @@
+.input {
+  min-width: 0;
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+  min-height: 2.75rem;
+
+  border: 0;
+  outline: 0;
+
+  padding: 0 0.75rem;
+
+  color: var(--field-text, #111827);
+  background: transparent;
+
+  font: inherit;
+  line-height: 1.5;
+}
+
+.input::placeholder {
+  color: var(--field-placeholder, #9ca3af);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+
+  color: var(--field-text-disabled, #9ca3af);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input[data-invalid] {
+  color: var(--field-text-error, #111827);
+}

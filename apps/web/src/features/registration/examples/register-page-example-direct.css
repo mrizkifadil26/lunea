@@ -1,0 +1,141 @@
+/* ==========================================
+   Register
+   ========================================== */
+
+.password-requirements {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px 16px;
+
+  margin: -4px 0 24px;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.requirement-icon {
+  width: 15px;
+  height: 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  color: var(--brand-indigo);
+
+  background: rgba(66, 133, 212, 0.1);
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   Legal
+   ========================================== */
+
+.legal {
+  max-width: 340px;
+
+  margin: 20px auto 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+.legal a {
+  color: var(--color-text-secondary);
+
+  font-weight: 500;
+
+  text-decoration: underline;
+  text-decoration-color: rgba(71, 85, 105, 0.35);
+  text-underline-offset: 2px;
+}
+
+/* ==========================================
+   Register Header
+   ========================================== */
+
+.auth-header h2 {
+  letter-spacing: -0.03em;
+}
+
+/* ==========================================
+   Tablet
+   ========================================== */
+
+@media (max-width: 960px) {
+  .auth-content {
+    width: min(100%, 380px);
+  }
+
+  .password-requirements {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   Mobile
+   ========================================== */
+
+@media (max-width: 720px) {
+  .password-requirements {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px 12px;
+
+    margin-bottom: 22px;
+  }
+
+  .requirement {
+    font-size: 11px;
+  }
+
+  .legal {
+    margin-top: 18px;
+  }
+}
+
+/* ==========================================
+   Small Phone
+   ========================================== */
+
+@media (max-width: 480px) {
+  .password-requirements {
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+
+    margin-bottom: 20px;
+  }
+
+  .requirement {
+    font-size: 12px;
+  }
+
+  .legal {
+    max-width: 300px;
+
+    font-size: 10.5px;
+  }
+}

@@ -1,0 +1,43 @@
+.field {
+  --field-label-color: var(--color-text);
+  --field-description-color: var(--color-text-secondary);
+  --field-error-color: var(--color-error-600);
+  --field-icon-color: var(--color-text-tertiary);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-block-end: 1.125rem;
+
+  .label {
+    color: var(--color-gray-800);
+
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+  }
+
+  .required {
+    color: var(--field-error-color);
+    font-weight: 500;
+  }
+
+  .description {
+    display: block;
+    margin-block-start: -0.125rem;
+
+    color: var(--field-description-color);
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+  }
+
+  &[data-invalid='true'] {
+    --field-error-color: var(--color-danger);
+  }
+
+  &[data-disabled='true'] {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}

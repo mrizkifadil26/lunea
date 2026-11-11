@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.storybook-static/
+.turbo/
+.vite/
+*.min.js
+pnpm-lock.yaml
