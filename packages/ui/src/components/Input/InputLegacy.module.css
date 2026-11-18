@@ -1,0 +1,186 @@
+.input {
+  /* Layout */
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+
+  padding-block: 0;
+  padding-inline: 0.75rem;
+
+  /* Reset */
+  margin: 0;
+  border: 1px solid var(--field-input-border, #d1d5db);
+  border-radius: 0.625rem;
+  outline: none;
+
+  appearance: none;
+  background: var(--field-input-background, #ffffff);
+
+  /* Typography */
+  color: var(--field-input-color, #111827);
+
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  letter-spacing: 0;
+
+  /* Interaction */
+  caret-color: var(--field-input-caret, #4f46e5);
+  cursor: text;
+
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    color 120ms ease;
+
+  /* Placeholder */
+  &::placeholder {
+    color: var(--field-input-placeholder, #9ca3af);
+    opacity: 1;
+  }
+
+  /* Autofill */
+  &:-webkit-autofill {
+    -webkit-text-fill-color: var(
+      --field-input-color,
+      #111827
+    );
+
+    caret-color: var(--field-input-caret, #4f46e5);
+
+    box-shadow: 0 0 0 1000px
+      var(--field-control-background, #ffffff) inset;
+
+    transition:
+      background-color 9999s ease-out,
+      color 9999s ease-out;
+  }
+
+  /* Selection */
+  &::selection {
+    background: var(
+      --field-input-selection-background,
+      rgb(99 102 241 / 0.2)
+    );
+
+    color: inherit;
+  }
+
+  /* Focus */
+  &:focus-visible {
+    border-color: var(--field-input-focus-border, #6366f1);
+
+    box-shadow: 0 0 0 3px
+      var(--field-input-focus-ring, rgb(99 102 241 / 0.15));
+  }
+
+  /* Hover */
+  &:not(:disabled):not(:read-only):hover {
+    border-color: var(--field-input-hover-border, #9ca3af);
+  }
+
+  /* Disabled */
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+
+    border-color: var(
+      --field-input-disabled-border,
+      #d1d5db
+    );
+
+    background: var(
+      --field-input-disabled-background,
+      #f3f4f6
+    );
+
+    color: var(--field-input-disabled-color, #9ca3af);
+
+    -webkit-text-fill-color: var(
+      --field-input-disabled-color,
+      #9ca3af
+    );
+
+    &::placeholder {
+      color: var(
+        --field-input-disabled-placeholder,
+        #d1d5db
+      );
+    }
+  }
+
+  /* Readonly */
+  &:read-only:not(:disabled) {
+    cursor: default;
+
+    background: var(
+      --field-input-readonly-background,
+      #f9fafb
+    );
+  }
+
+  /* ARIA Invalid + Disabled */
+  &[aria-invalid='true'] {
+    border-color: var(
+      --field-input-invalid-border,
+      #dc2626
+    );
+
+    caret-color: var(--field-input-invalid-caret, #dc2626);
+
+    &:focus-visible {
+      border-color: var(
+        --field-input-invalid-focus-border,
+        #dc2626
+      );
+
+      box-shadow: 0 0 0 3px
+        var(
+          --field-input-invalid-focus-ring,
+          rgb(220 38 38 / 0.15)
+        );
+    }
+
+    &::placeholder {
+      color: var(
+        --field-input-invalid-placeholder,
+        #9ca3af
+      );
+    }
+  }
+
+  &[aria-invalid='true']:disabled {
+    color: var(--field-input-disabled-color, #9ca3af);
+
+    -webkit-text-fill-color: var(
+      --field-input-disabled-color,
+      #9ca3af
+    );
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  /* High contrast / forced colors */
+  @media (forced-colors: active) {
+    border-radius: 0;
+
+    &:disabled,
+    &[aria-disabled='true'] {
+      color: GrayText;
+
+      -webkit-text-fill-color: GrayText;
+    }
+
+    &::placeholder {
+      color: GrayText;
+    }
+  }
+}

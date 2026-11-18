@@ -1,0 +1,106 @@
+.members {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.info {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 0.125rem;
+}
+
+.name {
+  overflow: hidden;
+
+  color: var(--color-gray-900);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.email {
+  overflow: hidden;
+
+  color: var(--color-gray-500);
+
+  font-size: 0.75rem;
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.role {
+  color: var(--color-gray-500);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.settings {
+  display: grid;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+
+  padding-block: 0.75rem;
+}
+
+.setting:first-child {
+  padding-block-start: 0;
+}
+
+.setting:last-child {
+  padding-block-end: 0;
+}
+
+.settingInfo {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.settingLabel {
+  color: var(--color-gray-900);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.settingValue {
+  color: var(--color-gray-500);
+
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}

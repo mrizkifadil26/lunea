@@ -1,0 +1,848 @@
+@import '@fontsource/outfit/400.css';
+
+:root {
+  /* ----------------------------------------
+     Brand
+     ---------------------------------------- */
+
+  --brand-teal: #38b9c5;
+  --brand-blue: #4787d1;
+  --brand-indigo: #4285d4;
+  --brand-gold: #f2c45c;
+
+  --gradient-brand: conic-gradient(
+    from 0deg,
+    var(--brand-teal) 13%,
+    var(--brand-blue) 42%,
+    var(--brand-indigo) 62%,
+    var(--brand-gold) 77%,
+    var(--brand-teal) 100%
+  );
+
+  /* ----------------------------------------
+     Neutral
+     ---------------------------------------- */
+
+  --color-text: #111827;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+
+  --color-border: #dbe2ec;
+  --color-border-hover: #c5cfdd;
+
+  --color-focus: #4285d4;
+
+  /* ----------------------------------------
+     Radius
+     ---------------------------------------- */
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ----------------------------------------
+     Typography
+     ---------------------------------------- */
+
+  --font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-brand: 'Outfit', sans-serif;
+
+  /* ----------------------------------------
+     Shadow
+     ---------------------------------------- */
+
+  --shadow-auth: 0 24px 70px rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================================
+   Reset
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  color: var(--color-text);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(56, 185, 197, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(242, 196, 92, 0.1),
+      transparent 30%
+    ),
+    var(--color-background);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* ==========================================
+   Auth Shell
+   ========================================== */
+
+.auth-shell {
+  width: min(1080px, calc(100vw - 48px));
+  min-height: 680px;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-xl);
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-auth);
+}
+
+/* ==========================================
+   Brand Panel
+   ========================================== */
+
+.brand-panel {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  padding: 48px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(71, 135, 209, 0.3),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #182f55 0%,
+      #173d6b 48%,
+      #1d4d80 100%
+    );
+}
+
+/*
+ * Very subtle lighting.
+ * The actual logo gradient remains the
+ * source of truth.
+ */
+
+.brand-panel::before {
+  content: '';
+
+  position: absolute;
+  z-index: -1;
+
+  width: 500px;
+  height: 500px;
+
+  right: -280px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.brand-panel::after {
+  content: '';
+
+  position: absolute;
+  z-index: -1;
+
+  width: 380px;
+  height: 380px;
+
+  right: -190px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+/* ==========================================
+   Brand
+   ========================================== */
+
+.brand {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  gap: 12px;
+
+  color: white;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+
+  display: block;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-brand);
+
+  font-size: 28px;
+  font-weight: 400;
+
+  letter-spacing: -0.015em;
+  line-height: 1;
+
+  color: white;
+}
+
+/* ==========================================
+   Brand Content
+   ========================================== */
+
+.brand-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 360px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-content h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 58px);
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+.brand-content p {
+  max-width: 300px;
+
+  margin: 24px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Decorative Rings
+   ========================================== */
+
+.brand-decoration {
+  position: absolute;
+
+  right: -80px;
+  bottom: -100px;
+
+  width: 440px;
+  height: 440px;
+
+  border-radius: 50%;
+
+  transform: rotate(-25deg);
+}
+
+.brand-decoration span {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.brand-decoration span:nth-child(1) {
+  inset: 0;
+}
+
+.brand-decoration span:nth-child(2) {
+  inset: 55px;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.brand-decoration span:nth-child(3) {
+  inset: 110px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================
+   Auth Panel
+   ========================================== */
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+
+  padding: 64px;
+}
+
+.auth-content {
+  width: min(100%, 390px);
+  margin-inline: auto;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+
+.auth-header {
+  margin-bottom: 36px;
+}
+
+.auth-header h2 {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  line-height: 1.15;
+
+  letter-spacing: -0.04em;
+}
+
+.auth-header p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   Fields
+   ========================================== */
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  color: var(--color-text);
+
+  background: white;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.field input::placeholder {
+  color: #94a3b8;
+}
+
+.field input:hover {
+  border-color: var(--color-border-hover);
+}
+
+.field input:focus {
+  border-color: var(--color-focus);
+
+  box-shadow: 0 0 0 3px rgba(66, 133, 212, 0.12);
+}
+
+/* ==========================================
+   Form Options
+   ========================================== */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 2px 0 24px;
+
+  font-size: 13px;
+}
+
+.form-options a,
+.auth-footer a {
+  color: var(--brand-indigo);
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.form-options a:hover,
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-text-secondary);
+
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+
+  margin: 0;
+
+  accent-color: var(--brand-indigo);
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+
+.button {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+/* Primary */
+
+.button-primary {
+  color: white;
+
+  border: 0;
+
+  background: linear-gradient(
+    100deg,
+    var(--brand-teal),
+    var(--brand-blue) 42%,
+    var(--brand-indigo) 70%,
+    var(--brand-gold)
+  );
+
+  box-shadow: 0 8px 20px rgba(66, 133, 212, 0.2);
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 12px 26px rgba(66, 133, 212, 0.25);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary */
+
+.button-secondary {
+  color: var(--color-text);
+
+  background: white;
+
+  border: 1px solid var(--color-border);
+}
+
+.button-secondary:hover {
+  background: #fafbfd;
+  border-color: var(--color-border-hover);
+}
+
+/* ==========================================
+   Divider
+   ========================================== */
+
+.divider {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 26px 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--color-border);
+}
+
+/* ==========================================
+   Google
+   ========================================== */
+
+.google-icon {
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #4285f4;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+.auth-footer {
+  display: flex;
+  justify-content: center;
+
+  gap: 4px;
+
+  margin-top: 28px;
+
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+}
+
+/* ==========================================
+   Page Positioning
+   ========================================== */
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 800px) {
+  body {
+    padding: 0;
+  }
+
+  .auth-shell {
+    width: 100%;
+    min-height: 100vh;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .brand-panel {
+    min-height: 340px;
+
+    padding: 32px;
+  }
+
+  .brand-content h1 {
+    font-size: 44px;
+  }
+
+  .auth-panel {
+    padding: 48px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-panel {
+    min-height: 300px;
+  }
+
+  .auth-panel {
+    padding: 40px 24px;
+  }
+
+  .brand-content h1 {
+    font-size: 38px;
+  }
+
+  .auth-header h2 {
+    font-size: 28px;
+  }
+}
+
+/* ==========================================
+   Tablet
+   ========================================== */
+
+@media (max-width: 960px) {
+  body {
+    padding: 20px;
+  }
+
+  .auth-shell {
+    min-height: 640px;
+
+    grid-template-columns: 40% 60%;
+
+    border-radius: 20px;
+  }
+
+  .brand-panel {
+    padding: 36px;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .brand-content h1 {
+    font-size: 46px;
+  }
+
+  .brand-content p {
+    max-width: 260px;
+
+    font-size: 14px;
+  }
+
+  .auth-panel {
+    padding: 48px;
+  }
+
+  .auth-content {
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 720px) {
+  .brand-panel {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 24px;
+
+    background:
+      radial-gradient(
+        circle at 50% 20%,
+        rgba(56, 185, 197, 0.16),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 75% 90%,
+        rgba(242, 196, 92, 0.1),
+        transparent 35%
+      ),
+      linear-gradient(
+        145deg,
+        #182f55 0%,
+        #173d6b 55%,
+        #1d4d80 100%
+      );
+  }
+
+  .brand {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+  }
+
+  .brand-name {
+    font-family: var(--font-brand);
+
+    font-size: 25px;
+    font-weight: 400;
+
+    letter-spacing: -0.015em;
+    line-height: 1;
+
+    color: #ffffff;
+  }
+
+  .brand-content {
+    display: none;
+  }
+
+  .brand-decoration {
+    width: 280px;
+    height: 280px;
+
+    right: 50%;
+    bottom: -230px;
+
+    transform: translateX(50%) rotate(-25deg);
+
+    opacity: 0.55;
+  }
+
+  .brand-decoration span:nth-child(1) {
+    border-color: rgba(255, 255, 255, 0.07);
+  }
+
+  .brand-decoration span:nth-child(2) {
+    border-color: rgba(56, 185, 197, 0.09);
+  }
+
+  .brand-decoration span:nth-child(3) {
+    border-color: rgba(242, 196, 92, 0.07);
+  }
+
+  .auth-panel {
+    min-height: calc(100vh - 180px);
+
+    align-items: flex-start;
+
+    padding: 40px 28px 36px;
+  }
+
+  .auth-content {
+    width: min(100%, 420px);
+  }
+}
+
+/* ==========================================
+   Small Phone
+   ========================================== */
+
+@media (max-width: 480px) {
+  .brand-panel {
+    min-height: 170px;
+
+    padding: 26px 20px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .auth-panel {
+    min-height: calc(100vh - 170px);
+
+    padding: 36px 24px 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-panel {
+    min-height: 158px;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 23px;
+  }
+
+  .auth-panel {
+    min-height: calc(100vh - 158px);
+
+    padding: 32px 20px 28px;
+  }
+}

@@ -1,0 +1,114 @@
+.control {
+  --field-control-height: 2.75rem;
+  --field-control-inset: 0.75rem;
+
+  --field-adornment-size: 1rem;
+  --field-adornment-interactive-size: 1.375rem;
+  --field-adornment-gap: 0.5rem;
+
+  position: relative;
+
+  width: 100%;
+  height: var(--field-control-height);
+
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+
+  &:hover {
+    border-color: var(--color-gray-400);
+  }
+
+  &:focus-within {
+    border-color: var(--color-primary);
+
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+
+  & [data-field-control-input] {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    padding-inline: var(--field-control-inset);
+    border: 0;
+    border-radius: 0;
+
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+
+    &:focus-visible {
+      border: 0;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &[data-has-start-adornment] {
+    padding-inline-start: calc(
+      var(--field-control-inset) +
+        var(--field-adornment-gap) +
+        var(--field-adornment-size)
+    );
+
+    & > button {
+      inline-size: 2rem;
+      block-size: 2rem;
+    }
+  }
+
+  &[data-has-end-adornment] {
+    padding-inline-end: calc(
+      var(--field-control-inset) +
+        var(--field-adornment-gap) +
+        var(--field-adornment-size)
+    );
+
+    & > button {
+      inline-size: 2rem;
+      block-size: 2rem;
+    }
+  }
+
+  &:has(input[aria-invalid='true']) {
+    border-color: var(--color-error-600);
+
+    &:hover {
+      border-color: var(--color-error-700);
+    }
+
+    &:focus-within {
+      border-color: var(--color-error-600);
+
+      box-shadow:
+        0 0 0 3px var(--color-error-200),
+        0 0 0 1px var(--color-error-600);
+    }
+  }
+
+  &[data-disabled='true'] {
+    cursor: not-allowed;
+
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-200);
+
+    [data-field-control-input] {
+      cursor: not-allowed;
+
+      color: var(--color-text-muted);
+      background: transparent;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control {
+    transition: none;
+  }
+}
