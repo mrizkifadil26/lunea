@@ -1,0 +1,184 @@
+.input {
+  /* Layout */
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+
+  /* Typography */
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* Appearance */
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+
+  /* Interaction */
+  outline: none;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+
+  /* Prevent browser-specific text input styling */
+  appearance: none;
+
+  /*
+ * Placeholder
+ */
+
+  &::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
+
+  /*
+ * Hover
+ */
+
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    border-color: var(--color-gray-400);
+    /* border-color: var(--color-border-hover, --color-gray-400); */
+  }
+
+  /*
+ * Focus
+ *
+ * Keep focus styling on the input itself.
+ * Field.Control should not need to provide it.
+ */
+
+  &:focus-visible {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+
+  /*
+ * Invalid
+ */
+
+  &[aria-invalid='true'] {
+    border-color: var(--color-error-600);
+    /* border-color: var(--color-danger, --color-error-600); */
+  }
+
+  &[aria-invalid='true']:hover:not(:disabled):not(
+      [aria-disabled='true']
+    ) {
+    border-color: var(--color-error-700);
+  }
+
+  &[aria-invalid='true']:focus-visible {
+    border-color: var(--color-error-600);
+    /* border-color: var(--color-danger); */
+    box-shadow:
+      0 0 0 3px var(--color-error-200),
+      0 0 0 1px var(--color-error-600);
+    /* box-shadow: 0 0 0 3px var(--color-error-100); */
+    /* box-shadow: 0 0 0 3px
+    var(--color-danger-subtle, --color-error-100); */
+  }
+
+  /*
+ * Disabled
+ */
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    color: var(--color-text-muted);
+    /* color: var(--color-text-disabled); */
+    /* background-color: var(--color-surface-disabled); */
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-200);
+    /* border-color: var(--color-border-disabled); */
+  }
+
+  &:disabled::placeholder,
+  &[aria-disabled='true']::placeholder {
+    color: var(--color-text-muted);
+    /* color: var(--color-text-disabled); */
+  }
+
+  /*
+ * Readonly
+ */
+
+  &:read-only:not(:disabled) {
+    background-color: var(--color-surface-muted);
+    /* background-color: var(--color-surface-subtle); */
+  }
+
+  /*
+ * Autofill
+ */
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-text-primary);
+  }
+
+  /*
+ * Search inputs
+ *
+ * Remove browser-provided decorations so the component
+ * has consistent dimensions.
+ */
+
+  &[type='search'] {
+    appearance: none;
+  }
+
+  &[type='search']::-webkit-search-decoration,
+  &[type='search']::-webkit-search-cancel-button,
+  &[type='search']::-webkit-search-results-button,
+  &[type='search']::-webkit-search-results-decoration {
+    appearance: none;
+  }
+
+  /*
+ * Number inputs
+ */
+
+  &[type='number'] {
+    appearance: textfield;
+  }
+
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  /*
+ * File inputs
+ */
+
+  &[type='file'] {
+    padding: 0.375rem 0.5rem;
+  }
+
+  &[type='file']::file-selector-button {
+    margin-right: 0.5rem;
+    padding: 0.375rem 0.625rem;
+
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 500;
+
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}
